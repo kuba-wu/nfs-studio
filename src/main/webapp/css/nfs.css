@@ -1,0 +1,217 @@
+@CHARSET "UTF-8";
+
+/* GENERAL */
+body {
+	padding-top: 116px;
+	padding-bottom: 20px;
+}
+
+hr {
+	margin-top: 40px;
+	margin-bottom: 40px;
+}
+
+/* MAIN */
+div.body {
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+.configuration-input {
+	margin-bottom: 2px;
+}
+
+div.main {
+	padding-left: 0px;
+	padding-right: 0px;
+	padding-top: 0px;
+}
+
+/* CONCENTRATION CHART */
+.concentration-chart-input  {
+	width: 200px;
+	float: right;
+}
+
+div.chart {
+	background-color: white;
+	height: 362px;
+}
+
+li.chart-system-header {
+	padding: 5px 5px 5px 5px;
+	font-size: 12px;
+	background-color: white;
+	font-weight: bold;
+}
+
+li.chart-property-header {
+	padding: 2px 5px 2px 5px;
+	font-size: 12px;
+	background-color: #eee;
+	color: #555;
+}
+
+li.chart-property {
+	padding: 2px 0 2px 0;
+}
+
+div.chart-archive {
+	padding : 15px 0px 15px 0px;
+}
+
+div.chart-container {
+	padding : 0px;
+}
+
+span.chart-poperty-value {
+	padding : 0px 0px 0px 5px;
+	font-size: 12px;
+	color: #555;
+	white-space: nowrap;
+}
+
+/* SYSTEM GRAPH */
+svg {
+	display: block;
+	margin: auto;
+}
+
+.node {
+	cursor: pointer;
+}
+
+.receptor {
+	fill: #F38279;
+}
+
+.effector {
+	fill: #799FF3;
+}
+
+path {
+	stroke-width: 1;
+}
+
+path.receptor {
+	fill: none;
+	stroke-dasharray: 10,10;
+}
+
+path.effector {
+	fill: none;
+	stroke-dasharray: 10,0;
+}
+
+text {
+	font-size: 11px;
+}
+
+div.property-editor {
+	height: 360px;
+	overflow-y: auto;
+	border: 1px solid #ccc;
+}
+
+div.property {
+	width: 50px !important;
+	margin-left: 10px;
+}
+
+input.double-type-property {
+	width: 60px !important;
+}
+
+input.property {
+	width: 50px !important;
+}
+
+li.property {
+	display: flex;
+	flex-wrap: wrap;
+	padding: 10px 0 10px 0;
+}
+
+li.property-name {
+	padding: 5px 10px 5px 10px;
+}
+
+li.property-sub-header {
+	padding: 2px 10px 2px 10px;
+	font-size: 12px;
+	background-color: #eee;
+	color: #555;
+}
+
+.configuration {
+	padding-right: 15px;
+}
+
+#runTimeInput {
+	width: 70px;
+}
+
+#outflowFactorInput {
+	width: 70px;
+}
+
+#timeScaleInput {
+	width: 70px;
+}
+
+#overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  filter: alpha(opacity=50);
+  z-index: 10000;
+  -moz-opacity: 0.5;
+  -khtml-opacity: 0.5;
+  opacity: 0.5;
+}
+
+div.exercise-header {
+	font-weight: bold;
+	font-size: 15px;
+	color: gray;'
+}
+
+#user, #password {
+	width: 120px;
+}
+
+.k-datetimepicker .k-picker-wrap .k-icon {
+	margin-top: 8px;
+}
+
+div.visible-wrapper {
+	display: inline;
+}
+
+.k-multiselect-wrap li {
+	margin: 2px 0 2px 2px;
+	padding: 0 0 0 .6em;
+	line-height: 1.6em;
+}
+
+.expired {
+	color: red;
+}
+
+.future {
+	color: blue;
+}
+
+.task-header {
+	padding-left: 0px;
+	padding-right: 0px;
+}
+
+.hover-label {
+	cursor: pointer;
+	margin-left: 5px;
+}

@@ -1,0 +1,18 @@
+<div>
+	<div class="panel panel-default property-editor">
+	    <ul class="list-group">
+	    	<li class="list-group-item list-group-item-info property-name">Selected systems</li>
+	    	<!--ko foreach: systems -->
+		        <li class="list-group-item">		        	
+		            Item <span data-bind="text: $index"> </span>: 
+		            "<span data-bind='text: name'></span>" 
+		            added@ <span data-bind="text: moment(timestamp).format('HH:mm:ss')"></span>
+		            <span data-bind="click: $parent.remove" type="button" class="label label-danger hover-label pull-right">remove</span>
+		        	<span data-bind="click: $parent.load" type="button" class="label label-success hover-label pull-right">load</span>
+		        </li>
+	    	<!--/ko-->
+	    </ul>
+    </div>
+    <button class="btn btn-primary pull-left" data-bind="click: compare, enable: systems().length > 0">Compare</button>
+    <button class="btn btn-primary pull-right" data-bind="click: addToList, enable: system">Add to list</button>
+</div>

@@ -1,0 +1,58 @@
+<div>
+    <nav class="navbar navbar-default navbar-fixed-top" style="margin-top: 50px; z-index: 999;">
+        <div class="container">
+            <task-picker id="osPicker"  params="view: 'studio'"></task-picker>
+            <sim-run params="view: 'studio'"></sim-run>
+        </div>
+    </nav>
+    <!-- MAIN VIEW-->
+    <div id='mainContainer' class='container body'>
+        <task-header params="view: 'studio'"></task-header>
+        <!-- ORGANIZED SYSTEMS GRAPH view -->
+        <legend>
+            <span>Graph</span>
+            <a data-toggle='collapse' href='#SystemGraph'><span class="glyphicon glyphicon-chevron-down pull-right"></span></a>
+        </legend>
+        <div class='main' id="SystemGraph" class='collapse'>
+            <graph params="view: 'studio'"></graph>
+        </div>  
+        
+        <!-- ORGANIZED SYSTEMS DEFINITION view -->
+        <legend>
+            <span>Simulations</span>
+            <a data-toggle='collapse' data-bind="attr: {href: '#'+containerId}" ><span class="glyphicon glyphicon-chevron-down pull-right"></span></a>
+        </legend>
+        <div data-bind="attr: {id: containerId}" class='panel-body collapse main'>
+            <div class="row">
+                <div class="col-md-6">
+                    <simulation-picker params="view: 'studio'"></simulation-picker>
+                </div>
+                <div class="col-md-6">
+                    <parameters-editor params="view: 'studio'"></parameters-editor>
+                </div>
+            </div>
+        </div>
+        
+        <!-- SIMULATION CHART view -->
+        <legend>
+            <span>Simulation chart</span>
+            <a data-toggle='collapse' href='#ConcentrationsChart'><span class="glyphicon glyphicon-chevron-down pull-right"></span></a>
+        </legend>
+        <div class='main' id="ConcentrationsChart">
+            <chart params="view: 'studio'"></chart>
+        </div>
+        
+        <!-- COMPARE view -->
+        <legend>
+            <span>Comparison charts</span>
+            <a data-toggle='collapse' href='#ComparisonCharts'><span class="glyphicon glyphicon-chevron-down pull-right"></span></a>
+        </legend>
+        <div class='main' id="ComparisonCharts">
+            <cycle-compare params="view: 'studio'"></cycle-compare>
+        </div>
+        <div class='main' id="ComparisonChartsChart">
+        <chart-compare params="view: 'studio'"></chart-compare>
+        </div>
+        <hr />
+    </div>
+</div>

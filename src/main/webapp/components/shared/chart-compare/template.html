@@ -1,0 +1,16 @@
+<div class='panel-body collapse' data-bind="attr: {id: containerId}">
+    <div id="chartCompareContainer">
+		<div class="chart-archive alert alert-dismissable alert-success">
+		    <div class="chart-container container">
+		        <div class="cold-md-12 chart" data-bind="attr: {id: chartContainerId}"></div>
+		    </div>
+		</div>
+    </div>
+    <div>
+    <!--ko foreach: graphs -->
+        <label class="btn btn-default" data-bind="style: {backgroundColor: $parent.colors()[product]}">
+            <input type="radio" data-bind="checkedValue: product, checked: $parent.selectedGraph" /><!-- ko text: product --><!--/ko-->
+        </label>
+    <!-- /ko -->
+    </div>
+</div>

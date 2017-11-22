@@ -1,0 +1,113 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"/>
+<html>
+<head>
+    <title>NFS Studio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <!-- external JavaScript -->
+    <!-- jQ -->
+    <script type="text/javascript" src="webjars/jquery/2.1.0/jquery.min.js"></script>
+    <script type='text/javascript' src="webjars/jquery-validation/1.11.1/jquery.validate.js"></script>
+    <script type='text/javascript' src="externals/jquery.url.js"></script>
+    <script type='text/javascript' src="webjars/jquery-cookie/1.4.1-1/jquery.cookie.js"></script>
+    <script type='text/javascript' src="externals/jquery.storageapi.js"></script>
+    <!-- KO -->
+    <script type="text/javascript" src="webjars/knockout/3.3.0/knockout.debug.js"></script>
+    <script type='text/javascript' src="externals/koExternalTemplateEngine_all.js"></script>
+    <script type='text/javascript' src="externals/knockout.mapping-latest.debug.js"></script>
+    <script type='text/javascript' src="externals/knockout-postbox.js"></script>
+    <!-- Bootstrap -->
+    <script type='text/javascript' src='webjars/bootstrap/3.3.1/js/bootstrap.min.js'></script>
+    <!-- KENDO UI -->
+    <script type='text/javascript' src='webjars/kendo-ui-core/2014.2.716/js/kendo.ui.core.js'></script>
+    <!-- AmCharts -->
+    <script src='webjars/amcharts/3.4.7/amcharts.js' type='text/javascript'></script>
+    <script src='webjars/amcharts/3.4.7/serial.js' type='text/javascript'></script>
+    <script src="webjars/amcharts/3.4.7/exporting/rgbcolor.js" type="text/javascript"></script>
+    <script src="webjars/amcharts/3.4.7/exporting/canvg.js" type="text/javascript"></script>
+    <script src="webjars/amcharts/3.4.7/exporting/filesaver.js" type="text/javascript"></script>
+    <script src="externals/amcharts-export-modified.js" type="text/javascript"></script>
+    <script src="externals/rcolor.js" type="text/javascript"></script>
+    <!-- ACE (editor) -->
+    <script src="webjars/ace/07.31.2013/src-min-noconflict/ace.js" type="text/javascript" charset="utf-8"></script>
+    <script src="webjars/vkbeautify/0.99.00.beta/vkbeautify.js" type="text/javascript"></script>
+    <!--  D3.js (graphs) -->
+    <script src="webjars/d3js/3.4.13/d3.min.js" type="text/javascript"></script>
+    <!--  bootstrap select plugin -->
+    <script src="webjars/bootstrap-select/1.6.2-1/dist/js/bootstrap-select.js"></script>
+    <!-- spinner plugin -->
+    <script src="externals/jquery.bootstrap-touchspin.js" type="text/javascript"></script>
+    <!-- dual list plugin -->
+    <script src="externals/multiselect.js" type="text/javascript"></script>
+    <!-- KENDO bindings -->
+    <script src="externals/knockout-kendo.min.js" type="text/javascript"></script>
+    <!-- MOMENT.js -->
+    <script src="webjars/momentjs/2.18.1/moment.js"></script>
+    <!-- require.js -->
+    <script src="webjars/requirejs/2.1.20/require.js"></script>
+    
+    <!-- components -->
+    <!-- SHARED -->
+    <script type="text/javascript" src="components/shared/chart/model.js"></script>
+    <script type="text/javascript" src="components/shared/code-editor/model.js"></script>
+    <script type="text/javascript" src="components/shared/chart-compare/model.js"></script>
+    <script type="text/javascript" src="components/shared/cycle-compare/model.js"></script>
+    <script type="text/javascript" src="components/shared/graph/model.js"></script>
+    <script type="text/javascript" src="components/shared/parameters-editor/model.js"></script>
+    <script type="text/javascript" src="components/shared/sim-run/model.js"></script>
+    <script type="text/javascript" src="components/shared/simulation-picker/model.js"></script>
+    <script type="text/javascript" src="components/shared/task-header/model.js"></script>
+    <script type="text/javascript" src="components/shared/task-picker/model.js"></script>
+    
+    <!-- ANONYMOUS -->
+    <script type="text/javascript" src="components/anonymous/studio/model.js"></script>
+
+    <!-- APPLICATION -->
+    <script type="text/javascript" src="js/main.js"></script>
+        
+    <!-- styles -->
+    <link rel='stylesheet' href='webjars/bootstrap/3.3.1/css/bootstrap.min.css'/>
+    <link rel='stylesheet' href="externals/jquery.bootstrap-touchspin.css"/>
+    <link rel='stylesheet' href='webjars/bootstrap-select/1.6.2-1/dist/css/bootstrap-select.css'/>
+    <link rel='stylesheet' href='webjars/kendo-ui-core/2014.2.716/styles/web/kendo.common-bootstrap.core.css'/>
+    <link rel='stylesheet' href='webjars/kendo-ui-core/2014.2.716/styles/web/kendo.bootstrap.css'/>
+    <link rel='stylesheet' href='css/nfs.css'/>
+
+</head>
+<body>
+    <!-- HEADER -->
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        <div class="container">
+            <a class="navbar-brand" href="#" onclick="window.location.href = MainModel.selfUrl();">NFS Studio</a>
+            <ul class="nav navbar-nav" id="NavigationMenu">
+                <li role="presentation" class="active">
+                    <a href="#studio" role="tab" data-toggle="tab" aria-controls="studio">Studio</a>
+                </li>
+            </ul>      
+        </div>
+    </nav>
+    <div class="container">
+        <div id="overlay" style="display: none;"></div>
+        <!-- ERROR / SUCCESS MESSAGES -->
+        <div id='mainErrorAlert' class="alert alert-danger alert-dismissable">
+            <button type="button" class="close" onclick="MainModel.clearErrorAlert()" aria-hidden="true">&times;</button>
+            <div id='mainErrorAlertText'></div>
+        </div>
+        <div id='mainSuccessAlert' class="alert alert-info alert-dismissable">
+            <button type="button" class="close" onclick="MainModel.clearSuccessAlert()" aria-hidden="true">&times;</button>
+            <div id='mainSuccessAlertText'></div>
+        </div>     
+    </div>
+    <div id="tabs" class="tab-content">
+        <div role="tabpanel" class="tab-pane active" id="studio">
+            <studio id="Studio" params="view: 'studio'"></studio>
+        </div>
+    </div>
+    <div class="container">
+        <footer>
+            <p>&copy; Jakub Wach 2017-</p>
+        </footer>
+    </div>
+    <initializer id="initializer"></initializer>
+</body>
+</html>
