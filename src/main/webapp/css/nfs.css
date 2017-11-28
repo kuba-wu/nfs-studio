@@ -114,8 +114,12 @@ div.property-editor {
 }
 
 div.property {
-	width: 50px !important;
+	width: 150px !important;
 	margin-left: 10px;
+}
+
+div.property span.input-group-btn-vertical {
+	float: left;
 }
 
 input.double-type-property {
