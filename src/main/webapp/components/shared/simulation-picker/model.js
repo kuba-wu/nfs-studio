@@ -58,7 +58,7 @@ var SimulationPickerModel = function(params){
     
     self.addToList = function() {
     	var system = {
-                system: self.system(),
+                system: self.system().system,
                 name: self.task().name,
                 timestamp: new Date()
         };
